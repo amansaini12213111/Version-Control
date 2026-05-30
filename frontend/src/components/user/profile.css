@@ -1,0 +1,214 @@
+/* UnderlineNav styling overrides */
+[aria-label="Repository"] {
+  background: rgba(22, 27, 34, 0.4);
+  border-bottom: 1px solid rgba(240, 246, 252, 0.08);
+  padding: 0 40px;
+  display: flex;
+  gap: 16px;
+}
+
+[aria-label="Repository"] a {
+  padding: 12px 16px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #adbac7 !important;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+[aria-label="Repository"] a:hover {
+  color: #f0f6fc !important;
+}
+
+[aria-label="Repository"] a[aria-current="page"] {
+  color: #f0f6fc !important;
+  border-bottom-color: #f78166;
+  font-weight: 600;
+}
+
+/* Logout Button */
+#logout {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 1000;
+  background-color: rgba(248, 81, 73, 0.15) !important;
+  color: #f85149 !important;
+  border: 1px solid rgba(248, 81, 73, 0.3) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#logout:hover {
+  background-color: #f85149 !important;
+  color: #ffffff !important;
+  border-color: #f85149 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(248, 81, 73, 0.4);
+}
+
+#logout:active {
+  transform: translateY(0);
+}
+
+/* Profile wrapper */
+.profile-page-wrapper {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 40px;
+  max-width: 1400px;
+  margin: 40px auto;
+  padding: 0 40px;
+  color: #c9d1d9;
+}
+
+/* User sidebar */
+.user-profile-section {
+  background: rgba(22, 27, 34, 0.6);
+  border: 1px solid rgba(240, 246, 252, 0.08);
+  border-radius: 16px;
+  padding: 32px 24px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
+}
+
+.profile-image {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1f6feb 0%, #8b5cf6 100%);
+  border: 4px solid rgba(240, 246, 252, 0.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  margin-bottom: 20px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.profile-image::after {
+  content: '👤';
+  font-size: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.profile-image:hover {
+  transform: scale(1.03);
+  border-color: #58a6ff;
+  box-shadow: 0 8px 30px rgba(88, 166, 255, 0.25);
+}
+
+.user-profile-section .name h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #f0f6fc;
+  margin: 0;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+.follow-btn {
+  background-color: #1f6feb !important;
+  color: #ffffff !important;
+  width: 100%;
+  height: 38px;
+  border-radius: 6px;
+  border: 1px solid rgba(240, 246, 252, 0.1);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(31, 111, 235, 0.2);
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.follow-btn:hover {
+  background-color: #388bfd !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(31, 111, 235, 0.35);
+}
+
+.follower {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  gap: 12px;
+  border-top: 1px solid rgba(240, 246, 252, 0.08);
+  padding-top: 16px;
+  margin: 0;
+}
+
+.follower p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #8b949e;
+  font-weight: 500;
+  background: rgba(240, 246, 252, 0.04);
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(240, 246, 252, 0.04);
+  transition: all 0.2s ease;
+}
+
+.follower p:hover {
+  background: rgba(240, 246, 252, 0.08);
+  color: #f0f6fc;
+  border-color: rgba(240, 246, 252, 0.1);
+}
+
+/* Heatmap Section */
+.heat-map-section {
+  background: rgba(22, 27, 34, 0.45);
+  border: 1px solid rgba(240, 246, 252, 0.08);
+  border-radius: 16px;
+  padding: 32px;
+  height: fit-content;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.heat-map-section h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f0f6fc;
+  margin-top: 0;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.heat-map-section h4::before {
+  content: '📊';
+}
+
+.HeatMapProfile {
+  background: rgba(13, 17, 23, 0.6) !important;
+  border: 1px solid rgba(240, 246, 252, 0.05);
+  border-radius: 10px;
+  padding: 20px;
+  overflow-x: auto;
+}
+
+@media screen and (max-width: 900px) {
+  .profile-page-wrapper {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 0 20px;
+  }
+  
+  .user-profile-section {
+    width: 100%;
+  }
+}

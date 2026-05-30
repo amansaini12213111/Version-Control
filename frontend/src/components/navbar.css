@@ -1,0 +1,89 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 40px;
+  background: rgba(22, 27, 34, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(240, 246, 252, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+}
+
+nav > a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+nav > a > div {
+  display: flex;
+  align-items: center;
+}
+
+nav img {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(240, 246, 252, 0.2);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.2s ease;
+}
+
+nav > a:hover img {
+  transform: rotate(15deg) scale(1.08);
+  border-color: #58a6ff;
+}
+
+nav h3 {
+  margin: 0;
+  margin-left: 12px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #f0f6fc;
+  background: linear-gradient(135deg, #ffffff 0%, #c9d1d9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.2s ease;
+}
+
+nav > a:hover h3 {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+nav > div {
+  display: flex;
+  align-items: center;
+}
+
+nav p {
+  margin: 0;
+  margin-left: 24px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #adbac7;
+  transition: all 0.2s ease;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none !important;
+}
+
+nav p:hover {
+  color: #58a6ff;
+  background: rgba(88, 166, 255, 0.08);
+  text-decoration: none !important;
+}
+
+@media screen and (max-width: 600px) {
+  nav {
+    padding: 14px 20px;
+  }
+  
+  nav p {
+    margin-left: 12px;
+    padding: 6px 10px;
+    font-size: 0.85rem;
+  }
+}

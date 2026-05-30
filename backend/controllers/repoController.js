@@ -165,15 +165,9 @@ async function fetchRepositoriesForCurrentUser(req, res) {
       .populate("owner")
       .populate("issues");
 
-    if (!repositories || repositories.length === 0) {
-      return res.status(404).json({
-        error: "User repositories not found!"
-      });
-    }
-
     return res.json({
       message: "Repositories found!",
-      repositories
+      repositories: repositories || []
     });
 
   } catch (err) {
