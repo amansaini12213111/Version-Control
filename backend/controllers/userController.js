@@ -11,13 +11,23 @@ async function signup(req, res) {
 
   try {
 
-    const existingUser = await User.findOne({
+    const existingUsername = await User.findOne({
       username,
     });
 
-    if (existingUser) {
+    if (existingUsername) {
       return res.status(400).json({
-        message: "User already exists!",
+        message: "Username is already taken!",
+      });
+    }
+
+    const existingEmail = await User.findOne({
+      email,
+    });
+
+    if (existingEmail) {
+      return res.status(400).json({
+        message: "Email is already registered!",
       });
     }
 
