@@ -12,7 +12,7 @@ async function signup(req, res) {
   try {
 
     const existingUsername = await User.findOne({
-      username,
+      username: new RegExp("^" + username + "$", "i"),
     });
 
     if (existingUsername) {
@@ -22,7 +22,7 @@ async function signup(req, res) {
     }
 
     const existingEmail = await User.findOne({
-      email,
+      email: new RegExp("^" + email + "$", "i"),
     });
 
     if (existingEmail) {
@@ -64,7 +64,17 @@ async function signup(req, res) {
       err.message
     );
 
-    return res.status(500).send("Server error");
+    if (err.code === 11000) {
+      const key = Object.keys(err.keyValue || {})[0] || "field";
+      const formattedKey = key.charAt(0).toUpperCase() + key.slice(1);
+      return res.status(400).json({
+        message: `${formattedKey} is already registered!`,
+      });
+    }
+
+    return res.status(500).json({
+      message: "Server error during signup. Please try again.",
+    });
   }
 }
 
